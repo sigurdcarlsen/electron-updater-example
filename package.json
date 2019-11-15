@@ -1,9 +1,9 @@
 {
   "name": "electron-updater-example",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "main": "main.js",
   "description": "electron-updater example project",
-  "author": "Matt Haggard",
+  "author": "Sigurd Carlsen",
   "scripts": {
     "publish": "build -p always"
   },
@@ -16,12 +16,18 @@
     "electron-updater": "^4.0.6"
   },
   "build": {
-    "appId": "com.github.iffy.electronupdaterexample",
-    "mac": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "sigurdcarlsen",
+        "repo": "electron-updater-example"
+      }
+    ],
+    "appId": "com.github.sigurdcarlsen.electronupdaterexample",
+    "linux": {
       "category": "your.app.category.type",
       "target": [
-        "zip",
-        "dmg"
+        "AppImage"
       ]
     }
   }
